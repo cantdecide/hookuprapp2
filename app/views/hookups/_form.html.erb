@@ -1,0 +1,56 @@
+<br><br>
+<%= form_for(@hookup) do |f| %>
+  <br>
+  <div class="field">
+    <label for="hookup_name">Name</label>
+    <br>
+    <input type="text" size="40" id="hookup_name" name="hookup[name]">
+  </div>
+  <div class="field">
+    <label for="hookup_age">Age</label>
+    <br>
+    <input type="number" style="width:40px;" id="hookup_age" name="hookup[age]">
+  </div>
+  <div class="field">
+    <label>Personality</label><br>
+  <input type="radio" name="hookup[personality]" id="hookup_personality1" value="1">1
+  <input type="radio" name="hookup[personality]" id="hookup_personality2" value="2">2
+  <input type="radio" name="hookup[personality]" id="hookup_personality3" value="3">3
+  <input type="radio" name="hookup[personality]" id="hookup_personality4" value="4">4
+  <input type="radio" name="hookup[personality]" id="hookup_personality5" value="5">5
+  </div>
+  <div class="field">
+    <label>Level of attraction</label><br>
+  <input type="radio" name="hookup[level_of_attraction]" id="hookup_level_of_attraction1" value="1">1
+  <input type="radio" name="hookup[level_of_attraction]" id="hookup_level_of_attraction2" value="2">2
+  <input type="radio" name="hookup[level_of_attraction]" id="hookup_level_of_attraction3" value="3">3
+  <input type="radio" name="hookup[level_of_attraction]" id="hookup_level_of_attraction4" value="4">4
+  <input type="radio" name="hookup[level_of_attraction]" id="hookup_level_of_attraction5" value="5">5
+  </div>
+  <div class="field">
+    <label>Intenseness of orgasm</label><br>
+  <input type="radio" name="hookup[intenseness_of_orgasm]" id="hookup_intenseness_of_orgasm1" value="1">1
+  <input type="radio" name="hookup[intenseness_of_orgasm]" id="hookup_intenseness_of_orgasm2" value="2">2
+  <input type="radio" name="hookup[intenseness_of_orgasm]" id="hookup_intenseness_of_orgasm3" value="3">3
+  <input type="radio" name="hookup[intenseness_of_orgasm]" id="hookup_intenseness_of_orgasm4" value="4">4
+  <input type="radio" name="hookup[intenseness_of_orgasm]" id="hookup_intenseness_of_orgasm5" value="5">5
+  </div>
+  <div class="field">
+    <label>Dick</label><br>
+  <input type="radio" name="hookup[dick]" id="hookup_dick1" value="1">1
+  <input type="radio" name="hookup[dick]" id="hookup_dick2" value="2">2
+  <input type="radio" name="hookup[dick]" id="hookup_dick3" value="3">3
+  <input type="radio" name="hookup[dick]" id="hookup_dick4" value="4">4
+  <input type="radio" name="hookup[dick]" id="hookup_dick5" value="5">5
+  </div>
+  <div class="field">
+    <label>Did you cum?</label>
+    <input class="unindent"type="checkbox" name="hookup[did_you_cum]">
+  </div>
+  <div class="field">
+    <label>Did you cuddle afterwards?</label>
+    <input class="unindent" type="checkbox" name="hookup[did_you_cuddle_afterwards]">
+  </div>
+  <%= f.submit %>
+<% end %>
+<hr>

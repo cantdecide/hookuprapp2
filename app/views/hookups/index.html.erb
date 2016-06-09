@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Hookups</h1>
+<br><br><br><br>
+<div class="tbl-wrapper">
+  <table class="tbl-all-hookups">
+    <thead style="background-color: rgb(255, 238, 201);">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Personality</th>
+        <th>Level of attraction</th>
+        <th>Intenseness of orgasm</th>
+        <th>Dick</th>
+        <th>Did you cum</th>
+        <th>Did you cuddle afterwards</th>
+        <th>Composite score</th>
+        <th colspan="3">Options</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @hookups.each do |hookup| %>
+        <tr>
+          <td><%= hookup.name %></td>
+          <td><%= hookup.age %></td>
+          <td><%= hookup.personality %></td>
+          <td><%= hookup.level_of_attraction %></td>
+          <td><%= hookup.intenseness_of_orgasm %></td>
+          <td><%= hookup.dick %></td>
+          <td><%= hookup.did_you_cum %></td>
+          <td><%= hookup.did_you_cuddle_afterwards %></td>
+          <td><%= hookup.composite_score %></td>
+          <td><%= link_to 'View', hookup %></td>
+          <td><%= link_to 'Edit', edit_hookup_path(hookup) %></td>
+          <td><%= link_to 'Delete', hookup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'New Hookup', new_hookup_path %>

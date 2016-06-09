@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HookUpr</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon"
+      type="image/png"
+      href="<%= asset_path('favicon.png') %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+        <div id="nav">
+          <div class="navClass" id="logo"><a href="/hookups">
+            <img src="<%= asset_path('tinyLogo.png') %>" alt="logo"/></a></div>
+          <h1 class="nav-title">HookUpr</h1>
+          <div id="navItems">
+          <div class="navClass" id="home"><a href="/hookups">Home</a></div>
+          <div class="navClass" id="about"><a href="/">About</a></div>
+          <div class="navClass" id="contact"><a href="/contact">Contact</a></div>
+        </div>
+          <!-- TODO: Add menu button -->
+        </div>
+      </header>
+
+<%= yield %>
+
+</body>
+</html>

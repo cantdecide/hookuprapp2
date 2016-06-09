@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hookup.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @hookup.age %>
+</p>
+
+<p>
+  <strong>Personality:</strong>
+  <%= @hookup.personality %>
+</p>
+
+<p>
+  <strong>Level of attraction:</strong>
+  <%= @hookup.level_of_attraction %>
+</p>
+
+<p>
+  <strong>Intenseness of orgasm:</strong>
+  <%= @hookup.intenseness_of_orgasm %>
+</p>
+
+<p>
+  <strong>Dick:</strong>
+  <%= @hookup.dick %>
+</p>
+
+<p>
+  <strong>Did you cum:</strong>
+  <%= @hookup.did_you_cum %>
+</p>
+
+<p>
+  <strong>Did you cuddle afterwards:</strong>
+  <%= @hookup.did_you_cuddle_afterwards %>
+</p>
+
+<p>
+  <strong>Composite score:</strong>
+  <%= @hookup.composite_score %>
+</p>
+
+<%= link_to 'Edit', edit_hookup_path(@hookup) %> |
+<%= link_to 'Back', hookups_path %>

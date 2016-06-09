@@ -1,0 +1,103 @@
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "hookups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "personality" integer, "level_of_attraction" integer, "intenseness_of_orgasm" integer, "dick" integer, "did_you_cum" boolean, "did_you_cuddle_afterwards" boolean, "composite_score" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160605011151')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "hookups"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "hookups" ("name", "age", "personality", "level_of_attraction", "intenseness_of_orgasm", "dick", "did_you_cum", "did_you_cuddle_afterwards", "composite_score", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 1, 1, 1, 'f', 'f', 1, '2016-06-05 06:08:15', '2016-06-05 06:08:15', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "hookups" ("name", "age", "personality", "level_of_attraction", "intenseness_of_orgasm", "dick", "did_you_cum", "did_you_cuddle_afterwards", "composite_score", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 1, 1, 1, 'f', 'f', 1, '2016-06-05 06:08:15', '2016-06-05 06:08:15', 298486374)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+HookupsControllerTest: test_should_update_hookup
+------------------------------------------------
+  [1m[35mHookup Load (0.2ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by HookupsController#update as HTML
+  Parameters: {"hookup"=>{"age"=>"1", "composite_score"=>"1", "dick"=>"1", "did_you_cuddle_afterwards"=>false, "did_you_cum"=>false, "intenseness_of_orgasm"=>"1", "level_of_attraction"=>"1", "name"=>"MyString", "personality"=>"1"}, "id"=>"980190962"}
+  [1m[36mHookup Load (0.1ms)[0m  [1mSELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/hookups/980190962
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+HookupsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[35mHookup Load (0.1ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by HookupsController#index as HTML
+  [1m[36mHookup Load (0.2ms)[0m  [1mSELECT "hookups".* FROM "hookups"[0m
+  Rendered hookups/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1239ms (Views: 1238.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+HookupsControllerTest: test_should_create_hookup
+------------------------------------------------
+  [1m[35mHookup Load (0.1ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "hookups"[0m
+Processing by HookupsController#create as HTML
+  Parameters: {"hookup"=>{"age"=>"1", "composite_score"=>"1", "dick"=>"1", "did_you_cuddle_afterwards"=>false, "did_you_cum"=>false, "intenseness_of_orgasm"=>"1", "level_of_attraction"=>"1", "name"=>"MyString", "personality"=>"1"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.8ms)[0m  [1mINSERT INTO "hookups" ("name", "age", "personality", "level_of_attraction", "intenseness_of_orgasm", "dick", "did_you_cum", "did_you_cuddle_afterwards", "composite_score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MyString"], ["age", 1], ["personality", 1], ["level_of_attraction", 1], ["intenseness_of_orgasm", 1], ["dick", 1], ["did_you_cum", "f"], ["did_you_cuddle_afterwards", "f"], ["composite_score", 1], ["created_at", "2016-06-05 06:08:16.621286"], ["updated_at", "2016-06-05 06:08:16.621286"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/hookups/980190963
+Completed 302 Found in 32ms (ActiveRecord: 28.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "hookups"[0m
+  [1m[35m (35.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+HookupsControllerTest: test_should_destroy_hookup
+-------------------------------------------------
+  [1m[35mHookup Load (0.1ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "hookups"[0m
+Processing by HookupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mHookup Load (0.1ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "hookups" WHERE "hookups"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/hookups
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "hookups"
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+HookupsControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mHookup Load (0.1ms)[0m  [1mSELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by HookupsController#new as HTML
+  Rendered hookups/_form.html.erb (65.5ms)
+  Rendered hookups/new.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 145ms (Views: 145.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+HookupsControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[35mHookup Load (0.1ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by HookupsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mHookup Load (0.1ms)[0m  [1mSELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered hookups/_form.html.erb (0.9ms)
+  Rendered hookups/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+HookupsControllerTest: test_should_show_hookup
+----------------------------------------------
+  [1m[35mHookup Load (0.1ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by HookupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mHookup Load (0.1ms)[0m  [1mSELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mHookup Load (0.0ms)[0m  SELECT  "hookups".* FROM "hookups" WHERE "hookups"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "hookups" SET "composite_score" = ?, "updated_at" = ? WHERE "hookups"."id" = ?  [["composite_score", 4], ["updated_at", "2016-06-05 06:08:16.861932"], ["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered hookups/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
